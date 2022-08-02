@@ -1,0 +1,41 @@
+<mat-toolbar class="header">
+
+  <button mat-icon-button (click)="drawerLeft.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span><a class="title" routerLink="/">techxssit</a></span>
+  <span class="toolbar-spacer"></span>
+  <button mat-icon-button *ngIf="!loggedIn()">
+    <mat-icon routerLink="/signup">account_circle</mat-icon>
+  </button>
+  <button mat-icon-button *ngIf="loggedInWithoutPhoto()">
+      <mat-icon routerLink="/profile">account_circle</mat-icon>
+  </button>
+  <div *ngIf="loggedInWithPhoto()" style="border: radius 50%;">
+      <a class="site" routerLink="/profile">
+          <img style="vertical-align: middle; height: 26px;padding-right: 8px" [src]="authService.userData.photoURL">
+      </a>
+  </div>
+  <button *ngIf="loggedIn()" mat-icon-button (click)="drawerRight.toggle()">
+    <mat-icon>chat_bubble</mat-icon>
+  </button>
+
+</mat-toolbar>
+
+<mat-sidenav-container class="sidenav-container">
+
+  <mat-sidenav #drawerLeft class="sidenav-left" position="start" mode="side">
+
+  </mat-sidenav>
+
+  <mat-sidenav-content class="sidenav-content">
+    <div class="sidenav-content-div">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+
+  <mat-sidenav #drawerRight class="sidenav-right" position="end" mode="side">
+    <app-chat></app-chat>
+  </mat-sidenav>
+
+</mat-sidenav-container>

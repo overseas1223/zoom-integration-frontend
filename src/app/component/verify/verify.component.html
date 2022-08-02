@@ -1,0 +1,32 @@
+<div fxLayout="row" fxLayoutAlign="center">
+
+  <mat-card class="box">
+
+      <mat-card-content>
+
+          <div style="font-size: 18px; padding: 0px 0px 20px 0px">
+              <span>Welcome Aboard!</span>
+          </div>
+
+          <div style="font-size: 13px; padding: 0px 0px 10px 0px" *ngIf="authService.userData as user">
+              <p>Thanks for joining our beta program. Activate the free trial now by verifying your email. If you don't see it, simply check your spam folder.</p>
+          </div>
+
+          <div style="text-align: center; font-size: 13px; padding: 0px 0px 30px 0px" *ngIf="authService.userData as user">
+              {{authService.userData.email}}
+          </div>
+
+      </mat-card-content>
+
+      <button mat-raised-button color="warn" style="margin: 5px 0px 20px 0px; width: 100%" appDebounceClick (debounceClick)="authService.verify()" [debounceTime]="30000">
+          Resend Confirmation
+      </button>
+
+      <p style="padding: 10px 0px; text-align: center;">
+          <span>Already verified?&nbsp;<a routerLink="/login">Login</a></span>
+      </p>
+
+      <alert></alert>
+
+  </mat-card>
+</div>

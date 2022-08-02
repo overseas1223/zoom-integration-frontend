@@ -1,0 +1,23 @@
+<div id="meetingSDKElement">
+    
+</div>
+<div class="message-container">
+  <div #messagesDiv class="messages">
+    <div class="container" *ngFor="let m of room?.messages">
+      <p *ngIf="m.type == 0" class="name-left">Hello {{m.name}}, how can I help?</p>
+      <p *ngIf="m.type == 1" class="name-left">{{m.name}}: {{m.text}}</p>
+      <p *ngIf="m.type == 2" class="name-left">Goodbye!</p>
+    </div>
+  </div>
+  <div>
+    <div class="entry">
+      <input *ngIf="this.subscription" class="input" type="text" [(ngModel)]="text" (keyup.enter)="onTextChat()" />
+      <div class="btn-group">
+        <button mat-raised-button color="primary" *ngIf="this.subscription == undefined" (click)="onStartChat()">Start</button>
+        <button mat-raised-button *ngIf="this.subscription" (click)="onTextChat()">Send</button>
+        <button mat-raised-button color="accent" *ngIf="this.subscription" (click)="onFinishChat()">Finish</button>
+        <button mat-raised-button color="warn" *ngIf="this.isMeeting" (click)="onJoinMeeting()">Join Meeting</button>
+      </div>
+    </div>
+  </div>
+</div>

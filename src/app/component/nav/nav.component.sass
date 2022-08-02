@@ -1,0 +1,38 @@
+@import "../../../colors"
+
+.mat-toolbar.header
+  position: fixed
+  top: 0
+  z-index: 1000
+  background-color: $toolbar-background
+  box-shadow: #0003 0 4px 6px -1px,#0000001f 0 2px 4px -1px
+  height: 60px
+
+.sidenav-container
+    position: fixed
+    top: 60px
+    left: 0
+    right: 0
+
+.sidenav-left
+    width: 300px
+    background-color: $sidenav-background
+
+.sidenav-content
+  background-color: $content-background
+  height: 100vh
+
+.sidenav-content-div
+    background-color: $content-background
+    overflow: scroll
+    padding-bottom: 120px
+    
+.sidenav-right
+    width: 300px
+    background-color: $sidenav-background
+
+.sidenav .mat-toolbar
+  background: inherit
+
+.toolbar-spacer
+  flex: 1 1 auto

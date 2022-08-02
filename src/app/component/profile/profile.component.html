@@ -1,0 +1,35 @@
+<div fxLayout="row" fxLayoutAlign="center">
+
+  <mat-card class="box">
+
+      <mat-card-content>
+
+          <div style="text-align: center">
+
+              <div>
+                  <form method="post" enctype="multipart/form-data">
+                      <button mat-stroked-button style="border: none; height: 156px" (click)="uploader.click()">
+                          <img [src]="profileUrl()" style="height: 128px; width: 128px" />
+                          <input hidden type="file" (change)="uploadPhoto($event)" accept=".png,.jpg,.webp" #uploader />
+                      </button>
+                  </form>
+              </div>
+
+              <div>
+                  <p>
+                      <span [innerHTML]="profileName()"></span>&nbsp;&nbsp;
+                      <span *ngIf="!isEmailVerified()"><a routerLink="/verify">Verify</a></span>
+                  </p>
+              </div>
+
+          </div>
+
+      </mat-card-content>
+
+      <button mat-raised-button color="warn" style="width: 100%; margin-bottom: 25px;" (click)="logout()">Logout</button>
+
+      <alert></alert>
+
+  </mat-card>
+
+</div>

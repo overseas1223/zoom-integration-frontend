@@ -1,0 +1,74 @@
+::ng-deep .mat-focused .mat-form-field-label
+    color: #2283f6 !important
+
+::ng-deep.mat-form-field-underline
+    background-color: #2283f6 !important
+
+::ng-deep.mat-form-field-ripple
+    background-color: #2283f6 !important
+
+.box
+    margin-top: 50px
+    max-width: 300px
+    padding: 60px 50px 40px 50px
+    border-radius: 10px
+    width: 100%
+    position: relative
+    top: 0
+    opacity: 1
+    float: left
+    transform: scale(1)
+    z-index: 5
+
+.loginGoogle
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    margin-bottom: 30px
+
+.loginContainer
+    display: grid
+    grid-template-areas: "gmail"
+    grid-template-columns: 1fr
+    grid-gap: 8px
+    width: 100%
+
+.loginGoogleButton
+    height: 42px
+    background-color: #fff
+    color: #0e111b
+    font-size: 12px
+    border-radius: 10px
+    cursor: pointer
+    display: flex
+    align-items: center
+    justify-content: flex-start
+    border: 1px solid #fff
+    justify-content: center
+    grid-area: gmail
+    padding: 0
+
+.loginGoogleButton:hover
+    box-shadow: 0 0 8px #2283f6
+    border-color: #4fb3f6
+
+.loginGoogleIcon
+    width: 30px
+    height: 30px
+    position: relative
+    margin-right: 15px
+    background-color: #f5f5f5
+    border-radius: 6px
+
+.loginGoogleImage
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    width: 22px
+    height: 22px
+
+.mat-raised-button
+    line-height: 42px
+    border-radius: 10px

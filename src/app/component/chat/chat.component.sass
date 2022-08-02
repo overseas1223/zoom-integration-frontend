@@ -1,0 +1,88 @@
+@import "../../../colors"
+
+.flex-container
+  display: flex
+
+.flex-stretch
+  flex: 100%
+
+.messages
+  
+
+/* Chat containers */
+.container
+  background-color: $toolbar-background
+  border-radius: 5px
+  padding: 0 10px
+  margin: 5px 5px
+
+.entry
+    width: 100%
+    text-align: center
+
+.input
+    width: 100%
+    border-radius: 5px
+    margin: 5px 5px 15px 5px
+    color: #000
+    border: 1px solid $toolbar-background
+    padding: 5px 5px 5px 5px
+
+
+/* Clear floats */
+.container::after
+  content: ""
+  clear: both
+  display: table
+
+.chat-line 
+  margin: 5px 0px
+/* Style images */
+.name-left
+  float: left
+  margin-left: 0
+  margin-right: 20px
+  margin-top: 10px
+
+/* Style the right image */
+.name-right
+  float: right
+  margin-left: 20px
+  margin-right: 0
+
+/* Style time text */
+.time-right
+  float: right
+  color: #aaa
+  font-size: 10px
+
+/* Style time text */
+.time-lef t
+  float: left
+  color: #999
+  font-size: 10px
+
+button
+  background: #ddd
+  border: 1px solid #ddd
+  color: #000
+  border-radius: 5px
+  padding: 4px 8px
+  font-size: 16px
+  box-shadow: 1px 3px 5px #333
+  margin: 0 4px
+
+mat-expansion-panel-header
+  background: #0f212e
+
+.mat-expansion-panel
+  background: #0f212e
+  color: #fff
+
+.message-container
+  height: calc(100vh - 150px)
+  overflow-x: hidden
+  overflow-y: auto
+  display: flex
+  flex-direction: column
+  justify-content: space-between

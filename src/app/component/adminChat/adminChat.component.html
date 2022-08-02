@@ -1,0 +1,28 @@
+<mat-expansion-panel class="chatbox">
+  <mat-expansion-panel-header #chatbox>
+    <mat-panel-title>
+      {{username}}
+    </mat-panel-title>
+    <mat-panel-description>
+      Chatbox
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+  <div class="message-container">
+    <div #messagesDiv class="messages">
+      <div class="container" *ngFor="let m of room?.messages">
+        <p *ngIf="m.type == 1" class="name-left">{{m.name}}: {{m.text}}</p>
+        <p *ngIf="m.type == 2" class="name-left">Goodbye!</p>
+      </div>
+    </div>
+    <div>
+      <div class="entry">
+        <input *ngIf="this.subscription" class="input" type="text" [(ngModel)]="text" (keyup.enter)="onTextChat()" />
+        <div class="btn-group">
+          <button mat-raised-button color="primary" *ngIf="this.subscription == undefined" (click)="onStartChat()">Start</button>
+          <button mat-raised-button *ngIf="this.subscription" (click)="onTextChat()">Send</button>
+          <button mat-raised-button color="warn" (click)="createMeeting()">Create Meeting</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</mat-expansion-panel>

@@ -1,0 +1,17 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Launch Chrome against localhost",
+      "type": "chrome",
+      "request": "launch",
+      "runtimeExecutable": "C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe",
+      "url": "http://localhost:4200",
+      "sourceMaps": true,
+      "webRoot": "${workspaceRoot}",
+      "sourceMapPathOverrides": {
+        "webpack:///./*": "${workspaceRoot}/*"
+      }
+    }
+  ]
+}

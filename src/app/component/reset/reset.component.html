@@ -1,0 +1,29 @@
+<div fxLayout="row" fxLayoutAlign="center">
+
+  <mat-card class="box">
+
+      <form id="reset-form">
+          <div [formGroup]="reset">
+              <mat-card-content>
+
+                  <mat-form-field style="padding: 5px 0px; width: 100%;">
+                      <input matInput type="text" formControlName="email" placeholder="Email" autocomplete="email" #email required>
+                  </mat-form-field>
+
+              </mat-card-content>
+          </div>
+
+          <button mat-raised-button color="warn" style="margin: 5px 0px 20px 0px; width: 100%" (click)="authService.reset(email.value)">
+              Reset Password
+          </button>
+
+      </form>
+
+      <p style="padding: 10px 0px; text-align: center;">
+          <span>Already reset?&nbsp;<a routerLink="/login">Login</a></span>
+      </p>
+
+      <alert></alert>
+
+  </mat-card>
+</div>

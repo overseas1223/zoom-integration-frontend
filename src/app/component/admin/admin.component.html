@@ -1,0 +1,12 @@
+<div id="admin-pannel">
+  <div id="admin-chat-pannel">
+    <div class="message-box" *ngFor="let user of userlist">
+      <app-admin-chat [user]="user" [roomId]="user.roomId" [username]="user.name" (zoomClicked)="createMeeting($event)"></app-admin-chat>
+    </div>
+  </div>
+  <div id="zoom-pannel">
+    <div id="meetingSDKElementAdmin">
+    
+    </div>
+  </div>
+</div>

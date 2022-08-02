@@ -1,0 +1,53 @@
+<div fxLayout="row" fxLayoutAlign="center">
+
+  <mat-card class="box">
+
+    <div class="loginContainer">
+
+      <button class="loginGoogleButton" (click)="authService.googleLogin()">
+        <div class="loginGoogleIcon">
+          <img class="loginGoogleImage" src="../../../assets/social/google.svg" alt="">
+        </div>
+        <span>Google</span>
+      </button>
+
+    </div>
+
+    <form id="login-form">
+      <div [formGroup]="login">
+        <mat-card-content>
+
+          <mat-form-field style="padding: 10px 0px; width: 100%">
+            <input matInput type="text" formControlName="email" placeholder="Email" autocomplete="" #email required>
+          </mat-form-field>
+
+          <mat-form-field style="padding: 10px 0px; width: 100%">
+            <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" placeholder="Password" autocomplete="current-password" #password required />
+            <mat-icon matSuffix style="cursor: pointer" (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </mat-form-field>
+
+          <div style="padding: 20px 0px 35px 0px; width: 100%">
+            <a routerLink="/reset">Forgot your password?</a>
+          </div>
+
+        </mat-card-content>
+
+        <button mat-raised-button color="warn" style="width: 100%" (click)="authService.login(email.value, password.value)">Login</button>
+
+        <p style="padding: 10px 0px 20px 0px; text-align: center;">
+          <span>By accessing the site, I confirm that I have read the <a href="../../../assets/termsOfService.pdf">terms of service</a></span>
+        </p>
+
+        <p style="padding: 10px 0px; text-align: center;">
+          <span>Do you have an account?&nbsp;<a class="redirect" routerLink="/signup">Sign Up</a></span>
+        </p>
+
+        <alert></alert>
+
+      </div>
+
+    </form>
+
+  </mat-card>
+
+</div>
